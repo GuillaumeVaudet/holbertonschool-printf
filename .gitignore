@@ -1,0 +1,13 @@
+# IDE configurations
+.vscode/
+.idea/
+
+# Compiled files
+*.o
+*.out
+*.a
+*.so
+
+# System files
+.DS_Store
+
