@@ -13,13 +13,13 @@ int _printf(const char *format, ...)
 
 	int i = 0;
 	int counter = 0;
-	
+
 	specifier array_of_specifier[3] = {
 		{'c', print_char},
 		{'s', print_string},
 		{'%', print_percent}
 	};
-	
+
 	if (format == NULL)
 	return (-1);
 	va_start(args, format);
@@ -29,7 +29,8 @@ int _printf(const char *format, ...)
 		{
 			_putchar(format[i]);
 			counter++;
-		} else {
+		} else
+		{
 			i++;
 			j = 0;
 			while (j < 3)
