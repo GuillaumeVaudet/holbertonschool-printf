@@ -1,6 +1,11 @@
 #include "main.h"
 #include <stdlib.h>
 
+/**
+ * print_string - print string
+ * @args: va_list
+ * Return: int - number of char printed
+ */
 int print_string(va_list args)
 {
 	int i = 0;
@@ -16,19 +21,22 @@ int print_string(va_list args)
 			i++;
 		}
 		return (counter);
-	} else
+	}
+	while (s[i] != '\0')
 	{
-		while (s[i] != '\0')
-		{
-			counter += _putchar(s[i]);
-			i++;
-		}
+		counter += _putchar(s[i]);
+		i++;
 	}
 	return (counter);
 }
 
+/**
+ * print_percent - print the percent symbol
+ * @args: va_list
+ * Return: int - number of char printed
+ */
 int print_percent(va_list args)
 {
 	(void)args;
-	return(_putchar('%'));
+	return (_putchar('%'));
 }
