@@ -2,5 +2,5 @@
 #define MAIN_H
 
 int _putchar(char c);
-int _putchar(const char *format, ...);
+int _printf(const char *format, ...);
 #endif
