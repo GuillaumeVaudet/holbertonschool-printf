@@ -10,6 +10,5 @@ typedef struct
 } specifier;
 
 int _putchar(char c);
-int _putchar(const char *format, ...);
-
+int _printf(const char *format, ...);
 #endif
