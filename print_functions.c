@@ -28,7 +28,7 @@ int print_string(va_list args)
 	int i = 0;
 	int counter = 0;
 	char *s = va_arg(args, char *);
-	char *nil_string = "(nil)";
+	char *nil_string = "(null)";
 
 	if (s == NULL)
 	{
@@ -62,12 +62,12 @@ int print_int_helper(long n)
 {
 	if (n < 0)
 	{
-		return(_putchar('-') + print_int_helper(-n));
+		return (_putchar('-') + print_int_helper(-n));
 	}
-		
+
 	if (n / 10 == 0)
 		return (_putchar(n + '0'));
-	return(print_int_helper(n / 10) + print_int_helper(n % 10));
+	return (print_int_helper(n / 10) + print_int_helper(n % 10));
 }
 /**
  * print_int - print digit passed as arg
@@ -75,9 +75,9 @@ int print_int_helper(long n)
  * Return: int - number of char printed
  */
 
- int print_int(va_list args)
- {
+int print_int(va_list args)
+{
 	int n = va_arg(args, int);
 
 	return (print_int_helper((long)n));
- }
+}
