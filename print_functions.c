@@ -58,7 +58,7 @@ int print_percent(va_list args)
 	return (_putchar('%'));
 }
 
-int print_int_helper(int n)
+int print_int_helper(long n)
 {
 	if (n < 0)
 	{
@@ -79,5 +79,5 @@ int print_int_helper(int n)
  {
 	int n = va_arg(args, int);
 
-	return (print_int_helper(n));
+	return (print_int_helper((long)n));
  }
