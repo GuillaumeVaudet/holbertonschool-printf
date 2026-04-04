@@ -44,6 +44,11 @@ int _printf(const char *format, ...)
 				}
 				j++;
 			}
+			if (j == 5)
+			{
+				_putchar(format[i]);
+				counter++;
+			}
 		}
 		i++;
 	}
