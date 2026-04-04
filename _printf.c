@@ -9,9 +9,8 @@
 int _printf(const char *format, ...)
 {
 	va_list args;
-	int j;
 
-	int i = 0, counter = 0;
+	int i = 0, j, counter = 0;
 
 	specifier_t array_of_specifier[5] = {
 		{'c', print_char},
@@ -33,6 +32,8 @@ int _printf(const char *format, ...)
 		} else
 		{
 			i++;
+			if (format[i] == '\0')
+				return (counter);
 			j = 0;
 			while (j < 5)
 			{
