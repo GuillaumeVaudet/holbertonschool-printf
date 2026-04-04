@@ -10,11 +10,11 @@
 
 int print_char(va_list args)
 {
-char c;
+	char c;
 
-c = (char)va_arg(args, int);
+	c = (char)va_arg(args, int);
 
-return (_putchar(c));
+	return (_putchar(c));
 }
 
 
@@ -58,3 +58,26 @@ int print_percent(va_list args)
 	return (_putchar('%'));
 }
 
+int print_int_helper(int n)
+{
+	if (n < 0)
+	{
+		return(_putchar('-') + print_int_helper(-n));
+	}
+		
+	if (n / 10 == 0)
+		return (_putchar(n + '0'));
+	return(print_int_helper(n / 10) + print_int_helper(n % 10));
+}
+/**
+ * print_int - print digit passed as arg
+ * @args: va_list - integer to print
+ * Return: int - number of char printed
+ */
+
+ int print_int(va_list args)
+ {
+	int n = va_arg(args, int);
+
+	return (print_int_helper(n));
+ }

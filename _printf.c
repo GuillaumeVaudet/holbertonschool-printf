@@ -17,11 +17,13 @@ int _printf(const char *format, ...)
 	specifier array_of_specifier[3] = {
 		{'c', print_char},
 		{'s', print_string},
+		{'i', print_int},
+		{'d', print_int},
 		{'%', print_percent}
 	};
 
 	if (format == NULL)
-	return (-1);
+		return (-1);
 	va_start(args, format);
 	while (format[i] != '\0')
 	{
