@@ -13,7 +13,7 @@ int _printf(const char *format, ...)
 
 	int i = 0, counter = 0;
 
-	specifier_t array_of_specifier[3] = {
+	specifier_t array_of_specifier[5] = {
 		{'c', print_char},
 		{'s', print_string},
 		{'i', print_int},
