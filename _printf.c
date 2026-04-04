@@ -34,7 +34,6 @@ int _printf(const char *format, ...)
 	int (*f)(va_list);
 
 	int i = 0, counter = 0;
-
 	specifier_t array_of_specifier[5] = {
 		{'c', print_char},
 		{'s', print_string},
@@ -59,12 +58,12 @@ int _printf(const char *format, ...)
 				return (-1);
 			f = get_specifier(format[i], array_of_specifier, 5);
 			if (f != NULL)
-			{
 				counter += f(args);
-			} else
+			else
 			{
+				_putchar('%');
 				_putchar(format[i]);
-				counter++;
+				counter += 2;
 			}
 		}
 		i++;
