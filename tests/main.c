@@ -56,5 +56,10 @@ int main(void)
 	len2 = _printf("Test de comportement avec _printf pour %y \n");
 	printf("printf retourne : %d\n", len1);
 	printf("_printf retourne : %d\n", len2);
+
+	len1 = printf("NULL: %s\n", s_null);
+	len2 = _printf("NULL: %s\n", s_null);
+	printf("printf : %d\n", len1);
+	printf("_printf : %d\n", len2);
 	return (0);
 }
