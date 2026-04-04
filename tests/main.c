@@ -14,7 +14,7 @@ int main(void)
 
 	int len1, len2;
 
-	
+
 	len1 = printf("Test avec printf : %c\n", c);
 	len2 = _printf("Test avec _printf : %c\n", c);
 	printf("printf retourne : %d\n", len1);
@@ -38,5 +38,23 @@ int main(void)
 	printf("printf retourne : %d\n", len1);
 	printf("_printf retourne : %d\n", len2);
 
+	printf("---------------------------------début % ----------------------------------------\n");
+
+	len1 = printf("Test de comportement avec printf pour %");
+	len2 = _printf("Test de comportement avec _printf pour %");
+	printf("printf retourne : %d\n", len1);
+	printf("_printf retourne : %d\n", len2);
+
+	printf("---------------------------------fin % ----------------------------------------\n");
+
+	len1 = printf("");
+	len2 = _printf("");
+	printf("printf retourne : %d\n", len1);
+	printf("_printf retourne : %d\n", len2);
+
+	len1 = printf("Test de comportement avec printf pour %y \n");
+	len2 = _printf("Test de comportement avec _printf pour %y \n");
+	printf("printf retourne : %d\n", len1);
+	printf("_printf retourne : %d\n", len2);
 	return (0);
 }
