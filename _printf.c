@@ -11,10 +11,9 @@ int _printf(const char *format, ...)
 	va_list args;
 	int j;
 
-	int i = 0;
-	int counter = 0;
+	int i = 0, counter = 0;
 
-	specifier array_of_specifier[3] = {
+	specifier_t array_of_specifier[3] = {
 		{'c', print_char},
 		{'s', print_string},
 		{'i', print_int},
@@ -35,7 +34,7 @@ int _printf(const char *format, ...)
 		{
 			i++;
 			j = 0;
-			while (j < 3)
+			while (j < 5)
 			{
 				if (format[i] == array_of_specifier[j].id)
 				{

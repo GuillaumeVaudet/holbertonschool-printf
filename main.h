@@ -4,15 +4,15 @@
 #include <stdarg.h>
 
 /**
-* specifier - new struct to print
+* struct specifier - new struct to print
 * @id: char
 * @f: pointer to a func
 */
-typedef struct
+typedef struct specifier
 {
 	char id;
 	int (*f)(va_list);
-} specifier;
+} specifier_t;
 
 int _putchar(char c);
 int _printf(const char *format, ...);
