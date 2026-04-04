@@ -28,7 +28,7 @@ int print_string(va_list args)
 	int i = 0;
 	int counter = 0;
 	char *s = va_arg(args, char *);
-	char *nil_string = "(nil)";
+	char *nil_string = "(null)";
 
 	if (s == NULL)
 	{
