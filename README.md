@@ -1,6 +1,79 @@
 # Integration Project: printf
 
-TODO: put project description project
+## Description
+
+The `printf` project consists in recreating a simplified version of the standard C function `printf`.
+
+The goal is to understand how formatted output works internally:
+- Parsing a format string
+- Handling variadic arguments (`va_list`)
+- Dispatching functions based on specifiers
+- Managing output character by character
+
+This project is a key milestone in low-level programming and reinforces core concepts such as:
+- Pointers
+- Function pointers
+- Structures
+- Memory handling
+- Recursion
+
+---
+
+## Prototype
+
+```c
+int _printf(const char *format, ...);
+```
+
+## Functions Description
+
+### print_char
+
+```c
+int print_char(va_list args);
+```
+Prints a single character: 
+Retrieves an int from va_list
+Casts it to a character
+Prints it using _putchar
+Returns 1
+
+### print_string
+```c
+int print_string(va_list args);
+```
+Prints a string:
+Retrieves a char * from va_list
+Prints each character until '\0'
+If NULL, prints (null)
+Returns the number of characters printed
+
+### print_int
+```c
+int print_int(va_list args);
+```
+Prints an integer:
+Retrieves an int from va_list
+Handles negative numbers
+Prints digits recursively
+Returns the number of characters printed
+
+### print_percent
+```c
+int print_percent(va_list args);
+```
+Prints the % character:
+Ignores va_list
+Prints % using _putchar
+Returns 1
+
+## Flowchart
+
+The following diagram illustrates the process of parsing the format string, detecting specifiers, and calling the associated functions.
+
+<p align="center">
+  <img src="./images/flowchart.jpg" alt="Flowchart printf" width="600">
+</p>
 
 ## Project GitHub Flow
 

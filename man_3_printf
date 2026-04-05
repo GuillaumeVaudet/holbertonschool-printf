@@ -1,0 +1,86 @@
+.TH _printf 3 "April 2026" "1.0" "_printf manual"
+
+.SH NAME
+_printf \- produce formatted output
+
+.SH SYNOPSIS
+.B #include "main.h"
+.PP
+.B int _printf(const char *format, ...);
+
+.SH DESCRIPTION
+The
+.B _printf
+function produces output according to a format string.
+
+The format string is composed of zero or more directives:
+ordinary characters (not preceded by %), which are copied unchanged
+to the standard output, and conversion specifiers, each of which
+results in fetching an argument.
+
+This implementation handles only a subset of the standard
+.B printf
+conversion specifiers.
+
+Supported conversion specifiers:
+
+.TP
+.B %c
+Prints a single character. The argument is passed as an int and
+converted to an unsigned char before printing.
+
+.TP
+.B %s
+Prints a string. The argument must be a pointer to a string.
+Characters are printed until the terminating null byte ('\\0').
+
+If a NULL pointer is passed, "(null)" is printed.
+
+.TP
+.B %d
+Prints a signed decimal integer. The argument is passed as an int and
+printed in base 10, with a leading minus sign if the value is negative.
+
+.TP
+.B %i
+Prints a signed integer. In this implementation, %i behaves the same
+as %d: the argument is passed as an int and printed in base 10.
+
+.TP
+.B %%
+Prints a percent sign.
+
+.PP
+This implementation does not handle:
+flags, field width, precision, length modifiers, or buffering.
+
+.SH RETURN VALUE
+Upon successful return,
+.B _printf
+returns the number of characters printed, excluding the
+terminating null byte.
+
+.SH EXAMPLES
+.B _printf("Hello, world\\n");
+
+.PP
+.B _printf("Character: %c\\n", 'H');
+
+.PP
+.B _printf("String: %s\\n", "Holberton");
+
+.PP
+.B _printf("Decimal: %d\\n", 42);
+
+.PP
+.B _printf("Integer: %i\\n", -98);
+
+.PP
+.B _printf("Percent: %%\\n");
+
+.SH SEE ALSO
+.BR printf (3),
+.BR write (2)
+
+.SH AUTHORS
+Guillaume Vaudet & Sébastien Lamblin
