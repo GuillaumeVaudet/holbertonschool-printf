@@ -47,3 +47,29 @@ If I have a new PR from my coworker I need to check his code and  comment if I h
 
 ### Markdown styling documentation
 - https://google.github.io/styleguide/docguide/style.html
+
+# Integration Project: printf
+
+## Description
+
+The `printf` project consists in recreating a simplified version of the standard C function `printf`.
+
+The goal is to understand how formatted output works internally:
+- Parsing a format string
+- Handling variadic arguments (`va_list`)
+- Dispatching functions based on specifiers
+- Managing output character by character
+
+This project is a key milestone in low-level programming and reinforces core concepts such as:
+- Pointers
+- Function pointers
+- Structures
+- Memory handling
+- Recursion
+
+---
+
+## Prototype
+
+```c
+int _printf(const char *format, ...);
